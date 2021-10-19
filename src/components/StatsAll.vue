@@ -140,7 +140,7 @@ export default {
     filterByName() {
       console.log("filter");
       this.sorted_out = this.json_out.filter((el) => {
-        return el.name.startsWith(this.queryName);
+        return el.name.toLowerCase().startsWith(this.queryName.toLowerCase());
       });
 
       console.log(this.queryName);
