@@ -6,8 +6,9 @@
       Enter your roll number to view details.
     </h3>
     <br />
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent>
       <input
+        @keyup="submitForm"
         type="text"
         id="searchBox"
         v-model="queryRoll"
