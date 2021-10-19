@@ -57,7 +57,6 @@ export default {
   name: "StatsAll",
   data() {
     return {
-      queryRoll: "",
       roll: 0,
       name: "Unknown",
       Compilation: "NA",
@@ -71,6 +70,10 @@ export default {
       sortOrder: 0, //0 or 1, ascending or descending
     };
   },
+  props: {
+    queryName: String,
+  },
+
   methods: {
     sortByTime() {
       this.sorted_out.sort((el1, el2) => {
@@ -121,7 +124,7 @@ export default {
           this.sorted_out = this.json_out;
           // Displaying Data
           // this.json_out.forEach((item) => {
-          //   if (item.roll == this.queryRoll) {
+          //   if (item.roll == this.queryName) {
           //     console.log(item.name);
           //     this.roll = item.roll;
           //     this.name = item.name;
@@ -133,6 +136,14 @@ export default {
           //   }
           // });
         });
+    },
+    filterByName() {
+      console.log("filter");
+      this.sorted_out = this.json_out.filter((el) => {
+        return el.name.startsWith(this.queryName);
+      });
+
+      console.log(this.queryName);
     },
   },
   beforeMount() {

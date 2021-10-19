@@ -31,7 +31,7 @@ export default {
     };
   },
   props: {
-    queryRoll: String,
+    queryName: String,
   },
   methods: {
     fetchData() {
@@ -49,7 +49,7 @@ export default {
           // Displaying Data
           console.log(this.json_out);
           this.json_out.forEach((item) => {
-            if (item.roll == this.queryRoll) {
+            if (item.roll == this.queryName) {
               console.log(item.name);
               this.roll = item.roll;
               this.name = item.name;

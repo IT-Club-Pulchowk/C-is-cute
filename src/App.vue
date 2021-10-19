@@ -3,7 +3,7 @@
   <br />
   <div class="container">
     <h3>
-      Enter your roll number to view details.
+      Filter by name.
     </h3>
     <br />
     <form @submit.prevent>
@@ -11,18 +11,15 @@
         @keyup="submitForm"
         type="text"
         id="searchBox"
-        v-model="queryRoll"
+        v-model="queryName"
         autocomplete="off"
       />
     </form>
   </div>
 
-  <StatsSpecific
-    v-show="showSpecific"
-    ref="statsSpecific"
-    :queryRoll="queryRoll"
-  />
-  <StatsAll v-show="!showSpecific" />
+  <StatsSpecific v-show="0" ref="statsSpecific" :queryName="queryName" />
+  <!-- <StatsAll v-show="!showSpecific" /> -->
+  <StatsAll :queryName="queryName" ref="statsAll" />
 </template>
 
 <script>
@@ -40,15 +37,16 @@ export default {
   data() {
     return {
       showSpecific: 0,
-      queryRoll: "",
+      queryName: "",
     };
   },
   methods: {
     submitForm() {
-      if (this.queryRoll != "") {
+      if (this.queryName != "") {
         this.showSpecific = 1;
       } else this.showSpecific = 0;
-      this.$refs.statsSpecific.fetchData();
+      // this.$refs.statsSpecific.fetchData();
+      this.$refs.statsAll.filterByName();
     },
   },
 };
