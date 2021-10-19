@@ -65,4 +65,14 @@ export default {
   height: 50px;
   padding-left: 5px;
 }
+table thead,
+table tfoot {
+  position: sticky;
+}
+table thead {
+  inset-block-start: 0; /* "top" */
+}
+table tfoot {
+  inset-block-end: 0; /* "bottom" */
+}
 </style>

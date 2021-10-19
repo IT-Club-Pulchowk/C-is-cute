@@ -1,11 +1,11 @@
 //TODO: Fix empty entry while sorting
 
 <template>
-  <div class="container p-5 table-responsive">
+  <div class="container-fluid p-5">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">
+          <th class="sticky-header" scope="col">
             Roll <i @click="sortByRoll" class="fa fa-fw fa-sort"></i>
           </th>
           <th scope="col">
@@ -147,11 +147,39 @@ export default {
   height: 50px;
   padding-left: 5px;
 }
-th {
-  position: sticky;
-  top: 0;
-}
+
 i {
   cursor: pointer;
+}
+.container {
+  overflow: auto !important;
+}
+
+table thead {
+  background-color: white;
+  position: sticky;
+  inset-block-start: 0; /* "top" */
+}
+
+.custom-container {
+  padding-right: 0;
+  padding-left: 0;
+  width: 50%;
+}
+
+@media (min-width: 568px) {
+  .container-fluid {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container-fluid {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-fluid {
+    width: 1170px;
+  }
 }
 </style>
