@@ -1,25 +1,33 @@
+//TODO: Fix empty entry while sorting
+
 <template>
   <div class="container p-5 table-responsive">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Roll</th>
-          <th scope="col">Name</th>
+          <th scope="col">
+            Roll <i @click="sortByRoll" class="fa fa-fw fa-sort"></i>
+          </th>
+          <th scope="col">
+            Name <i @click="sortByName" class="fa fa-fw fa-sort"></i>
+          </th>
           <th scope="col">Compilation</th>
           <th scope="col">Execution</th>
           <th scope="col">Output</th>
           <th scope="col">Correctness</th>
-          <th scope="col">Runtime</th>
+          <th scope="col">
+            Runtime <i @click="sortByTime" class="fa fa-fw fa-sort"></i>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="person in json_out" :key="person.roll">
-          <th scope="row">{{ person.roll }}</th>
+        <tr v-for="person in sorted_out" :key="person.roll">
+          <th scope="row" v-if="person.roll != undefined">{{ person.roll }}</th>
           <td>{{ person.name }}</td>
-          <td>{{ person.Compilation }}</td>
-          <td>{{ person.Execution }}</td>
-          <td>{{ person.Output }}</td>
-          <td>{{ person.Correctness }}</td>
+          <td>{{ person.Compilation == "true" ? "✔️" : "❌" }}</td>
+          <td>{{ person.Execution == "true" ? "✔️" : "❌" }}</td>
+          <td>{{ person.Output == "true" ? "✔️" : "❌" }}</td>
+          <td>{{ person.Correctness == "true" ? "✔️" : "❌" }}</td>
           <td>{{ person["Compilation Time"] }}</td>
         </tr>
         <!-- <tr>
@@ -58,10 +66,45 @@ export default {
       Output: "NA",
       time: "NA",
       data_url: "https://aabhusanaryal.github.io/fake-json/MOCK_DATA.csv",
-      json_out: {},
+      json_out: [],
+      sorted_out: [],
+      sortOrder: 0, //0 or 1, ascending or descending
     };
   },
   methods: {
+    sortByTime() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1["Compilation Time"] - el2["Compilation Time"];
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByName() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.name > el2.name;
+        if (this.sortOrder) {
+          return d ? 1 : -1;
+        } else {
+          return d ? -1 : 1;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByRoll() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.roll - el2.roll;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
     fetchData() {
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
@@ -73,8 +116,9 @@ export default {
             const fields = line.split(",");
             return Object.fromEntries(header.map((h, i) => [h, fields[i]]));
           });
-          this.json_out = output;
-
+          this.json_out = Object.values(output); // this is an array
+          this.sorted_out = this.json_out;
+          console.log(this.sorted_out);
           // Displaying Data
           // this.json_out.forEach((item) => {
           //   if (item.roll == this.queryRoll) {
@@ -102,5 +146,12 @@ export default {
   width: 300px;
   height: 50px;
   padding-left: 5px;
+}
+th {
+  position: sticky;
+  top: 0;
+}
+i {
+  cursor: pointer;
 }
 </style>
