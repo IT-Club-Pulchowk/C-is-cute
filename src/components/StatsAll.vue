@@ -117,8 +117,8 @@ export default {
             return Object.fromEntries(header.map((h, i) => [h, fields[i]]));
           });
           this.json_out = Object.values(output); // this is an array
+          this.json_out.pop(); // Removes the last (useless) entry
           this.sorted_out = this.json_out;
-          console.log(this.sorted_out);
           // Displaying Data
           // this.json_out.forEach((item) => {
           //   if (item.roll == this.queryRoll) {
