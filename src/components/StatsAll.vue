@@ -2,7 +2,10 @@
 
 <template>
   <div class="container-fluid p-5">
-    <table class="table table-striped">
+    <table
+      class="table table-striped"
+      :class="systemTheme == 'dark-theme' ? 'table-dark' : ''"
+    >
       <thead>
         <tr>
           <th class="sticky-header" scope="col">
@@ -72,6 +75,7 @@ export default {
   },
   props: {
     queryName: String,
+    systemTheme: String,
   },
 
   methods: {
@@ -148,6 +152,9 @@ export default {
   },
   beforeMount() {
     this.fetchData();
+  },
+  mounted() {
+    console.log(this.systemTheme);
   },
 };
 </script>

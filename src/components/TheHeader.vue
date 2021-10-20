@@ -1,6 +1,9 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary"
+      :class="systemTheme == 'dark-theme' ? 'bg-dark' : ''"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">IT Club</a>
         <button
@@ -34,6 +37,9 @@ export default {
   name: "TheHeader",
   components: {
     // HelloWorld,
+  },
+  props: {
+    systemTheme: String,
   },
 };
 </script>

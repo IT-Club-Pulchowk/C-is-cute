@@ -1,5 +1,5 @@
 <template>
-  <TheHeader />
+  <TheHeader :systemTheme="systemTheme" />
   <br />
   <div class="container">
     <h3>
@@ -19,7 +19,7 @@
 
   <StatsSpecific v-show="0" ref="statsSpecific" :queryName="queryName" />
   <!-- <StatsAll v-show="!showSpecific" /> -->
-  <StatsAll :queryName="queryName" ref="statsAll" />
+  <StatsAll :queryName="queryName" ref="statsAll" :systemTheme="systemTheme" />
 </template>
 
 <script>
@@ -38,6 +38,7 @@ export default {
     return {
       showSpecific: 0,
       queryName: "",
+      systemTheme: "light-theme",
     };
   },
   methods: {
@@ -48,6 +49,15 @@ export default {
       // this.$refs.statsSpecific.fetchData();
       this.$refs.statsAll.filterByName();
     },
+  },
+  mounted() {
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (darkThemeMq.matches) {
+      this.systemTheme = "dark-theme";
+      document.querySelector("html").classList.add("dark-theme");
+    } else {
+      this.systemTheme = "light-theme";
+    }
   },
 };
 </script>
@@ -73,5 +83,26 @@ table thead {
 }
 table tfoot {
   inset-block-end: 0; /* "bottom" */
+}
+/* Define styles for the default root window element */
+html {
+  --background-color-primary: #fafafa;
+  --background-color-secondary: #fafafa;
+  --accent-color: #cacaca;
+  --text-primary-color: #222;
+  --element-size: 4rem;
+}
+
+/* Define styles for the root window with dark - mode preference */
+html.dark-theme {
+  --background-color-primary: #212121;
+  --background-color-secondary: #2d2d30;
+  --accent-color: #3f3f3f;
+  --text-primary-color: #ddd;
+}
+
+body {
+  color: var(--text-primary-color);
+  background-color: var(--background-color-primary);
 }
 </style>
