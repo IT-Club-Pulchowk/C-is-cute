@@ -51,6 +51,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.$route.query);
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     if (darkThemeMq.matches) {
       this.systemTheme = "dark-theme";
@@ -67,8 +68,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-#app {
-}
+
 #searchBox {
   width: 300px;
   height: 50px;

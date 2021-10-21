@@ -2,7 +2,11 @@
 
 <template>
   <div class="container-fluid p-5">
+    <div class="alert alert-danger" role="alert" v-if="error">
+      Data not found!
+    </div>
     <table
+      v-if="!error"
       class="table table-striped"
       :class="systemTheme == 'dark-theme' ? 'table-dark' : ''"
     >
@@ -67,10 +71,14 @@ export default {
       Correctness: "NA",
       Output: "NA",
       time: "NA",
-      data_url: "https://aabhusanaryal.github.io/fake-json/MOCK_DATA.csv",
+      day: 0,
+      data_url_base: "https://aabhusanaryal.github.io/fake-json/MOCK_DATA",
+      data_url: "",
       json_out: [],
       sorted_out: [],
       sortOrder: 0, //0 or 1, ascending or descending
+      error: 0,
+      errorMsg: "",
     };
   },
   props: {
@@ -115,7 +123,10 @@ export default {
     fetchData() {
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
-        .then((res) => res.text())
+        .then((res) => {
+          if (!res.ok) this.error = 1;
+          return res.text();
+        })
         .then((input) => {
           const lines = input.split("\n");
           const header = lines[0].split(",");
@@ -126,19 +137,6 @@ export default {
           this.json_out = Object.values(output); // this is an array
           this.json_out.pop(); // Removes the last (useless) entry
           this.sorted_out = this.json_out;
-          // Displaying Data
-          // this.json_out.forEach((item) => {
-          //   if (item.roll == this.queryName) {
-          //     console.log(item.name);
-          //     this.roll = item.roll;
-          //     this.name = item.name;
-          //     this.Compilation = item.Compilation;
-          //     this.Execution = item.Execution;
-          //     this.Output = item.Output;
-          //     this.Correctness = item.Correctness;
-          //     this.time = item["Compilation Time"];
-          //   }
-          // });
         });
     },
     filterByName() {
@@ -151,10 +149,15 @@ export default {
     },
   },
   beforeMount() {
-    this.fetchData();
+    console.log(this.$route.query.day);
   },
   mounted() {
-    console.log(this.systemTheme);
+    console.log(this.data_url);
+    const urlParams = new URLSearchParams(window.location.search);
+    this.day = urlParams.get("day");
+    this.data_url = `${this.data_url_base}_DAY${this.day}.csv`;
+    // console.log(this.systemTheme);
+    this.fetchData();
   },
 };
 </script>
