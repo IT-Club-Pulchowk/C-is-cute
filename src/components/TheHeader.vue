@@ -23,7 +23,25 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="/?day=1">Day 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=2">Day 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=3">Day 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=4">Day 4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=5">Day 5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=6">Day 6</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/?day=7">Day 7</a>
             </li>
           </ul>
         </div>
