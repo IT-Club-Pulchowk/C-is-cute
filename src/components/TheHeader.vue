@@ -31,17 +31,6 @@
         </div>
       </div>
     </nav>
-    Navbar for everynyan
-    <ul style="display: inline; padding: 10px">
-      <li class="" v-for="i in 7" :key="i">
-        <router-link
-          class="nav-link"
-          :class="$route.params.day == i ? 'active' : ''"
-          :to="`/${i}`"
-          >Day {{ i }}</router-link
-        >
-      </li>
-    </ul>
   </header>
 </template>
 
