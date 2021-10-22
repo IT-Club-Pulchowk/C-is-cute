@@ -3,7 +3,7 @@ import StatsAll from "../components/StatsAll.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/:day",
     name: "Home",
     component: StatsAll,
   },

@@ -19,29 +19,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=1">Day 1</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=2">Day 2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=3">Day 3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=4">Day 4</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=5">Day 5</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=6">Day 6</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/?day=7">Day 7</a>
+            <li class="nav-item" v-for="i in 7" :key="i">
+              <router-link
+                class="nav-link"
+                :class="$route.params.day == i ? 'active' : ''"
+                :to="`/${i}`"
+                >Day {{ i }}</router-link
+              >
             </li>
           </ul>
         </div>

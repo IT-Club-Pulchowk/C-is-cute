@@ -1,5 +1,3 @@
-//TODO: Fix empty entry while sorting
-
 <template>
   <div class="container-fluid p-5">
     <div class="alert alert-danger" role="alert" v-if="error">
@@ -37,23 +35,6 @@
           <td>{{ person.Correctness == "true" ? "✔️" : "❌" }}</td>
           <td>{{ person["Compilation Time"] }}</td>
         </tr>
-        <!-- <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr> -->
       </tbody>
     </table>
   </div>
@@ -71,7 +52,7 @@ export default {
       Correctness: "NA",
       Output: "NA",
       time: "NA",
-      day: 0,
+      day: "1",
       data_url_base: "https://aabhusanaryal.github.io/fake-json/MOCK_DATA",
       data_url: "",
       json_out: [],
@@ -121,10 +102,12 @@ export default {
       this.sortOrder = !this.sortOrder;
     },
     fetchData() {
+      console.log(`Fetching ${this.data_url}`);
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
         .then((res) => {
           if (!res.ok) this.error = 1;
+          else this.error = 0;
           return res.text();
         })
         .then((input) => {
@@ -140,24 +123,23 @@ export default {
         });
     },
     filterByName() {
-      console.log("filter");
       this.sorted_out = this.json_out.filter((el) => {
         return el.name.toLowerCase().startsWith(this.queryName.toLowerCase());
       });
-
-      console.log(this.queryName);
     },
   },
-  beforeMount() {
-    console.log(this.$route.query.day);
-  },
   mounted() {
-    console.log(this.data_url);
-    const urlParams = new URLSearchParams(window.location.search);
-    this.day = urlParams.get("day");
+    this.day = this.$route.params.day;
+    console.log(this.day);
     this.data_url = `${this.data_url_base}_DAY${this.day}.csv`;
-    // console.log(this.systemTheme);
     this.fetchData();
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to, from);
+      this.data_url = `${this.data_url_base}_DAY${to.params.day}.csv`;
+      this.fetchData();
+    },
   },
 };
 </script>

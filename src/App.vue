@@ -16,23 +16,20 @@
       />
     </form>
   </div>
-
-  <StatsSpecific v-show="0" ref="statsSpecific" :queryName="queryName" />
-  <!-- <StatsAll v-show="!showSpecific" /> -->
-  <StatsAll :queryName="queryName" ref="statsAll" :systemTheme="systemTheme" />
+  <router-view
+    :queryName="queryName"
+    ref="statsAll"
+    :systemTheme="systemTheme"
+  />
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import StatsSpecific from "./components/StatsSpecific.vue";
-import StatsAll from "./components/StatsAll.vue";
 
 export default {
   name: "App",
   components: {
     TheHeader,
-    StatsSpecific,
-    StatsAll,
   },
   data() {
     return {
@@ -51,7 +48,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$route.query);
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     if (darkThemeMq.matches) {
       this.systemTheme = "dark-theme";
