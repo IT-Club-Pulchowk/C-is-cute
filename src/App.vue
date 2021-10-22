@@ -8,7 +8,6 @@
     <br />
     <form @submit.prevent>
       <input
-        @keyup="submitForm"
         type="text"
         id="searchBox"
         v-model="queryName"

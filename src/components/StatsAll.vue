@@ -140,6 +140,9 @@ export default {
       this.data_url = `${this.data_url_base}_DAY${to.params.day}.csv`;
       this.fetchData();
     },
+    queryName() {
+      this.filterByName();
+    },
   },
 };
 </script>
