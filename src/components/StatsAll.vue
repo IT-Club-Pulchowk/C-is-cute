@@ -129,10 +129,19 @@ export default {
     },
   },
   mounted() {
-    this.day = this.$route.params.day;
-    console.log(this.day);
-    this.data_url = `${this.data_url_base}_DAY${this.day}.csv`;
-    this.fetchData();
+    if (this.$route.params.day != undefined) {
+      this.day = this.$route.params.day;
+      console.log(this.day);
+      this.data_url = `${this.data_url_base}_DAY${this.day}.csv`;
+      this.fetchData();
+    } else {
+      fetch("https://aabhusanaryal.github.io/fake-json/maxDays.json")
+        .then((res) => res.json())
+        .then((res) => {
+          this.day = res[0];
+          this.$router.push({ path: `/${this.day}` });
+        });
+    }
   },
   watch: {
     $route(to, from) {

@@ -52,9 +52,7 @@ export default {
     fetch("https://aabhusanaryal.github.io/fake-json/maxDays.json")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         this.maxDays = res[0];
-        console.log(this.maxDays);
       });
   },
 };

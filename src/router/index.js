@@ -4,6 +4,11 @@ import StatsAll from "../components/StatsAll.vue";
 const routes = [
   {
     path: "/:day",
+    name: "Day",
+    component: StatsAll,
+  },
+  {
+    path: "/",
     name: "Home",
     component: StatsAll,
   },
