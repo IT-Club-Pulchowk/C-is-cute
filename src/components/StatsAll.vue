@@ -139,7 +139,7 @@ export default {
         .then((res) => res.json())
         .then((res) => {
           this.day = res[0];
-          this.$router.push({ path: `/${this.day}` });
+          this.$router.replace({ path: `/${this.day}` });
         });
     }
   },

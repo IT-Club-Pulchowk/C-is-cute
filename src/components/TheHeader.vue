@@ -5,7 +5,7 @@
       :class="systemTheme == 'dark-theme' ? 'bg-dark' : ''"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">IT Club</a>
+        <a class="navbar-brand" href="/">IT Club</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -15,6 +15,7 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
+          <!-- webhook test -->
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
