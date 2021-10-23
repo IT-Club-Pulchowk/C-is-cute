@@ -102,7 +102,7 @@ export default {
       this.sortOrder = !this.sortOrder;
     },
     fetchData() {
-      console.log(`Fetching ${this.data_url}`);
+      // console.log(`Fetching ${this.data_url}`);
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
         .then((res) => {

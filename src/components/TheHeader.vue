@@ -19,7 +19,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item" v-for="i in 7" :key="i">
+            <li class="nav-item" v-for="i in maxDays" :key="i">
               <router-link
                 class="nav-link"
                 :class="$route.params.day == i ? 'active' : ''"
@@ -42,6 +42,20 @@ export default {
   },
   props: {
     systemTheme: String,
+  },
+  data() {
+    return {
+      maxDays: 0,
+    };
+  },
+  mounted() {
+    fetch("https://aabhusanaryal.github.io/fake-json/maxDays.json")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.maxDays = res[0];
+        console.log(this.maxDays);
+      });
   },
 };
 </script>
