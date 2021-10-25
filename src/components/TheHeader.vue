@@ -1,46 +1,70 @@
 <template>
   <header>
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary"
-      :class="systemTheme == 'dark-theme' ? 'bg-dark' : ''"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">IT Club</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <!-- webhook test 2-->
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item" v-for="i in maxDays" :key="i">
+    <div class="page-wrapper with-navbar">
+      <!-- Navbar (immediate child of the page wrapper) -->
+
+      <nav class="navbar">
+        <a href="/" class="navbar-brand ml-10 ml-sm-15">
+          IT CLUB
+        </a>
+        <ul class="navbar-nav hidden-sm-and-down">
+          <li
+            class="nav-item"
+            :class="$route.params.day == i ? 'active' : ''"
+            v-for="i in maxDays"
+            :key="i"
+          >
+            <router-link class="nav-link" :to="`/${i}`"
+              >Day {{ i }}</router-link
+            >
+          </li>
+        </ul>
+
+        <div class="navbar-content ml-auto">
+          <button
+            class="btn btn-action mr-5"
+            type="button"
+            onclick="halfmoon.toggleDarkMode()"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fa fa-moon-o" aria-hidden="true"></i>
+          </button>
+
+          <div class="dropdown with-arrow hidden-md-and-up">
+            <button
+              class="btn navbar-menu-btn"
+              data-toggle="dropdown"
+              type="button"
+              id="navbar-dropdown-toggle-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="text">Menu</span>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbar-dropdown-toggle-btn"
+            >
               <router-link
-                class="nav-link"
+                class="dropdown-item"
                 :class="$route.params.day == i ? 'active' : ''"
+                v-for="i in maxDays"
+                :key="i"
                 :to="`/${i}`"
                 >Day {{ i }}</router-link
               >
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
   name: "TheHeader",
-  components: {
-    // HelloWorld,
-  },
   props: {
     systemTheme: String,
   },

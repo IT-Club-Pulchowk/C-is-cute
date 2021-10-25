@@ -3,11 +3,7 @@
     <div class="alert alert-danger" role="alert" v-if="error">
       Data not found!
     </div>
-    <table
-      v-if="!error"
-      class="table table-striped"
-      :class="systemTheme == 'dark-theme' ? 'table-dark' : ''"
-    >
+    <table class="table table-striped" v-if="!error">
       <thead>
         <tr>
           <th class="sticky-header" scope="col">
@@ -102,7 +98,6 @@ export default {
       this.sortOrder = !this.sortOrder;
     },
     fetchData() {
-      // console.log(`Fetching ${this.data_url}`);
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
         .then((res) => {
@@ -126,6 +121,7 @@ export default {
       this.sorted_out = this.json_out.filter((el) => {
         return el.name.toLowerCase().startsWith(this.queryName.toLowerCase());
       });
+      console.log(this.sorted_out);
     },
   },
   mounted() {
@@ -148,6 +144,7 @@ export default {
       console.log(to, from);
       this.data_url = `${this.data_url_base}_DAY${to.params.day}.csv`;
       this.fetchData();
+      this.filterByName();
     },
     queryName() {
       this.filterByName();
@@ -168,12 +165,6 @@ i {
 }
 .container {
   overflow: auto !important;
-}
-
-table thead {
-  background-color: white;
-  position: sticky;
-  inset-block-start: 0; /* "top" */
 }
 
 .custom-container {

@@ -1,25 +1,30 @@
 <template>
   <TheHeader :systemTheme="systemTheme" />
-  <br />
-  <div class="container">
-    <h3>
-      Filter by name.
-    </h3>
+  <div class="content-wrapper">
     <br />
-    <form @submit.prevent>
-      <input
-        type="text"
-        id="searchBox"
-        v-model="queryName"
-        autocomplete="off"
-      />
-    </form>
+    <br />
+    <br />
+    <div class="container">
+      <br />
+      <form @submit.prevent class="w-400 mw-full">
+        <div class="form-group">
+          <label for="full-name">Filter by name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="searchBox"
+            v-model="queryName"
+            autocomplete="off"
+          />
+        </div>
+      </form>
+    </div>
+    <router-view
+      :queryName="queryName"
+      ref="statsAll"
+      :systemTheme="systemTheme"
+    />
   </div>
-  <router-view
-    :queryName="queryName"
-    ref="statsAll"
-    :systemTheme="systemTheme"
-  />
 </template>
 
 <script>
@@ -50,7 +55,7 @@ export default {
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     if (darkThemeMq.matches) {
       this.systemTheme = "dark-theme";
-      document.querySelector("html").classList.add("dark-theme");
+      document.querySelector("body").classList.add("dark-mode");
     } else {
       this.systemTheme = "light-theme";
     }
@@ -78,26 +83,5 @@ table thead {
 }
 table tfoot {
   inset-block-end: 0; /* "bottom" */
-}
-/* Define styles for the default root window element */
-html {
-  --background-color-primary: #fafafa;
-  --background-color-secondary: #fafafa;
-  --accent-color: #cacaca;
-  --text-primary-color: #222;
-  --element-size: 4rem;
-}
-
-/* Define styles for the root window with dark - mode preference */
-html.dark-theme {
-  --background-color-primary: #212121;
-  --background-color-secondary: #2d2d30;
-  --accent-color: #3f3f3f;
-  --text-primary-color: #ddd;
-}
-
-body {
-  color: var(--text-primary-color);
-  background-color: var(--background-color-primary);
 }
 </style>
