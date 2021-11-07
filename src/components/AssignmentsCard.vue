@@ -26,6 +26,13 @@
           Description
         </h2>
         <div v-html="assignmentDescription"></div>
+        <div v-highlight>
+          <pre class="language-clike">
+                <code>
+{{assignment.code}}
+                </code>
+            </pre>
+        </div>
         <div class="text-center mt-20">
           <!-- text-center = text-align: center, mt-20 = margin-top: 2rem (20px) -->
           <a class="btn btn-sm" :href="assignment.link" target="_blank">
@@ -48,9 +55,6 @@ export default {
     assignmentDescription() {
       return marked.parse(this.assignment.description);
     },
-  },
-  mounted() {
-    document.querySelectorAll("code").forEach((el) => el.classList.add("code")); // For inline code formatting
   },
 };
 </script>
