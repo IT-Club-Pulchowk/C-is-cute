@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import StatsAll from "../components/StatsAll.vue";
+import Assignments from "../components/Assignments.vue";
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
     name: "Home",
     component: StatsAll,
   },
+  {
+    path: "/assignments",
+    name: "Assignments",
+    component: Assignments,
+  },
+
   // {
   //   path: '/about',
   //   name: 'About',

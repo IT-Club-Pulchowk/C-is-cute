@@ -3,7 +3,22 @@
     <div class="alert alert-danger" role="alert" v-if="error">
       Data not found!
     </div>
-    <table class="table table-striped" v-if="!error">
+    <div class="container">
+      <br />
+      <form @submit.prevent class="w-400 mw-full">
+        <div class="form-group">
+          <label for="full-name">Filter by name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="searchBox"
+            v-model="queryName"
+            autocomplete="off"
+          />
+        </div>
+      </form>
+    </div>
+    <table class="table table-striped table-hover" v-if="!error">
       <thead>
         <tr>
           <th class="sticky-header" scope="col">
@@ -56,10 +71,11 @@ export default {
       sortOrder: 0, //0 or 1, ascending or descending
       error: 0,
       errorMsg: "",
+      queryName: "",
+      dataLoaded: false,
     };
   },
   props: {
-    queryName: String,
     systemTheme: String,
   },
 

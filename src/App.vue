@@ -1,24 +1,43 @@
 <template>
+  <div
+    class="modal modal-full ie-scroll-fix"
+    id="modal-1"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <a href="#" class="close" role="button" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div v-highlight>
+                <pre class="language-javascript">
+                    <code>
+                    console.log(hello);
+                    console.log(hello);
+                    console.log(hello);
+                    console.log(hello);
+                    console.log(hello);
+                    console.log(hello);
+                    </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <TheHeader :systemTheme="systemTheme" />
   <div class="content-wrapper">
     <br />
     <br />
     <br />
-    <div class="container">
-      <br />
-      <form @submit.prevent class="w-400 mw-full">
-        <div class="form-group">
-          <label for="full-name">Filter by name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="searchBox"
-            v-model="queryName"
-            autocomplete="off"
-          />
-        </div>
-      </form>
-    </div>
+
     <router-view
       :queryName="queryName"
       ref="statsAll"
