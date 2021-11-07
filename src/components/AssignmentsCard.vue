@@ -1,6 +1,6 @@
 <template>
   <!-- Card with no padding with multiple content containers nested inside of it -->
-  <div class="w-600 mw-full">
+  <div class="w-600 mw-full" :id="assignment.id">
     <!-- w-600 = width: 60rem (600px), mw-full = max-width: 100% -->
     <div class="card p-0">
       <!-- p-0 = padding: 0 -->

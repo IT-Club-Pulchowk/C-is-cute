@@ -21,6 +21,9 @@
         </ul>
 
         <div class="navbar-content ml-auto">
+          <router-link class="nav-link" to="/assignments">
+            Assignments</router-link
+          >
           <button
             class="btn btn-action mr-5"
             type="button"
