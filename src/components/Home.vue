@@ -9,7 +9,7 @@
         <h5 class="modal-title">Register for the workshop</h5>
         <!-- Form element start -->
         <form
-          action="https://send.pageclip.co/8FK0jzAfhqmOC9uuqHwR8zrAkCp21KEW/adv-c"
+          action="https://send.pageclip.co/hAf4RUcDPZO09Dy184yDBwPFVp9PkvoU"
           method="post"
           class="pageclip-form"
         >
