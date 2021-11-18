@@ -132,28 +132,28 @@
     <h2># Advance C Workshop</h2>
     <hr />
     <br />
-    Advanced C Workshop is sequel to the previous session of C workshop for
-    beginners. In this session we shall learn about more advanced concepts and
-    techniques that is useful for performance programming. While the workshop
-    itself uses C programming language (C11) to demonstrate its concepts, the
-    large number of concepts that shall be shown in the workshop will be
-    language agnostic. People might think that this program is about low-level
-    programming. While we will go deep into how each programming technique works
-    in the hardware, all the concepts shown are useful for both high level and
-    low-level programming.<br /><br />
+    Advanced C Workshop is a sequel to the previous session of C workshop
+    conducted by IT Club. The aim of this workshop is to engage in more advanced
+    concepts and techniques useful for performance programming. The workshop
+    uses C programming language (C11) to demonstrate the concepts, but the
+    intent is to be a presentation of topics that are language agnostic. While
+    the workshop looks seemingly geared towards low level programming, the
+    concepts presented here carry over and be significant in high level
+    programming as well.
+    <br /><br />
     <h4>## Objectives of the workshop:</h4>
     <li>
-      To teach programming concepts and techniques that are either not taught at
-      all or not taught properly in college and comparatively harder to learn
-      from the internet.
+      To teach programming concepts and techniques that are either glossed over
+      or completely skipped in seemingly effective college syllabus and are a
+      challenge to self-study from the internet.
       <span v-show="false"
         >[the teachers probably don't know and the course itself focuses on a
         lot of theory instead of programming, so it’s rather bad]</span
       >
     </li>
     <li>
-      To encourage juniors to conduct more useful programs via the Pulchowk IT
-      Club benefiting everyone in the club and the college.
+      To increase the interest in juniors to take up a greater challenge for
+      their projects which are not only refined but also efficient.
     </li>
     <div class="text-center">
       <a href="#register" class="btn btn-primary" role="button">Register Now</a>
@@ -268,7 +268,10 @@
     <!-- Contact -->
     <h4>## Contact</h4>
     If you have any questions regarding the workshop, feel free to reach out to
-    us on our <a href="https://discord.gg/dvV6RrjjmS">Discord server.</a>
+    us on our
+    <a href="https://discord.gg/dvV6RrjjmS">Discord server.</a> <br />
+    We look forward to actively supporting projects this workshop may bring
+    about and extend a helping hand if need be. Happy coding.
   </div>
 </template>
 <script>
