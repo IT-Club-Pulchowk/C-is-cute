@@ -8,6 +8,11 @@
         </a>
         <h5 class="modal-title">Register for the workshop</h5>
         <!-- Form element start -->
+        <div class="alert" role="alert" v-if="formSubmission">
+          <h4 class="alert-heading">Default alert</h4>
+          This is a default alert with some content and
+          <a href="#" class="alert-link">a link</a>.
+        </div>
         <form
           action="https://send.pageclip.co/hAf4RUcDPZO09Dy184yDBwPFVp9PkvoU"
           method="post"
@@ -109,13 +114,15 @@
 
           <!-- Submit Button Start -->
           <button
+            class="button pageclip-form__submit btn btn-primary btn-block"
             type="submit"
-            class="pageclip-form__submit btn btn-primary btn-block"
           >
-            <span>Send</span>
+            <span>Submit</span>
           </button>
+
           <!-- Submit Button End -->
         </form>
+
         <!-- Form End -->
       </div>
     </div>
@@ -265,7 +272,28 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      formSubmission: null,
+    };
+  },
+  mounted() {
+    const form = document.querySelector(".pageclip-form");
+    window.Pageclip.form(form, {
+      onResponse: function(error, response) {
+        if (error) {
+          this.formSubmission = false;
+        }
+        if (response) {
+          this.formSubmission = true;
+          console.log(this.formSubmission);
+        }
+      },
+      successTemplate: `<div class="alert alert-success" role="alert">Thank you for registering!</div>`,
+    });
+  },
+};
 </script>
 
 <style scoped>
