@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-6" v-for="assignment in data" :key="assignment.id">
+      <div v-for="assignment in data" :key="assignment.id">
         <AssignmentsCard :assignment="assignment" />
       </div>
     </div>
@@ -19,14 +19,16 @@ export default {
   data() {
     return {
       data_url: "https://aabhusanaryal.github.io/fake-json/assignments.json",
+      data_url_temp:
+        "https://aabhusanaryal.github.io/fake-json/assignments/1.md",
       data: {},
     };
   },
   mounted() {
-    fetch(this.data_url)
-      .then((res) => res.json())
+    fetch(this.data_url_temp)
+      .then((res) => res.text())
       .then((res) => {
-        this.data = res;
+        this.data[0] = res;
       });
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <!-- Card with no padding with multiple content containers nested inside of it -->
-  <div class="w-600 mw-full" :id="assignment.id">
+  <div class="mw-full" :id="assignment.id">
     <!-- w-600 = width: 60rem (600px), mw-full = max-width: 100% -->
     <div class="card p-0">
       <!-- p-0 = padding: 0 -->
@@ -29,7 +29,7 @@
         <div v-highlight>
           <pre class="language-clike">
                 <code>
-{{assignment.code}}
+printf("Hello World")
                 </code>
             </pre>
         </div>
@@ -46,6 +46,19 @@
 
 <script>
 import { marked } from "marked";
+const renderer = {
+  code(code) {
+    return `<div v-highlight>
+          <pre class="language-clike">
+                <code class="language-clike">
+${code}
+                </code>
+            </pre>
+        </div>`;
+  },
+};
+
+marked.use({ renderer });
 export default {
   name: "AssignmentsCard",
   props: {
@@ -53,8 +66,13 @@ export default {
   },
   computed: {
     assignmentDescription() {
-      return marked.parse(this.assignment.description);
+      return marked.parse(this.assignment);
     },
+  },
+  mounted() {
+    document
+      .querySelectorAll("code")
+      .forEach((block) => (block.innerHTML += "hello"));
   },
 };
 </script>
