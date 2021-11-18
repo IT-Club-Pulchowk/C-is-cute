@@ -5,7 +5,7 @@
 
       <nav class="navbar">
         <router-link to="/" class="navbar-brand ml-10 ml-sm-15">
-          IT CLUB
+          Advance C Workshop
         </router-link>
         <ul class="navbar-nav hidden-sm-and-down">
           <li
@@ -21,7 +21,8 @@
         </ul>
 
         <div class="navbar-content ml-auto">
-          <router-link class="nav-link" to="/assignments">
+          <!-- Remove v-show="false" to show Assignments link in navbar -->
+          <router-link class="nav-link" to="/assignments" v-show="false">
             Assignments</router-link
           >
           <button
@@ -88,7 +89,6 @@ export default {
 
 <style>
 header {
-  background-color: red;
   height: 50px;
   width: 100%;
 }

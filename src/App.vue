@@ -43,6 +43,17 @@
       ref="statsAll"
       :systemTheme="systemTheme"
     />
+    <footer class="bg-very-dark font-size-12">
+      <div class="text-center">
+        Event organised by
+        <a href="https://github.com/IT-Club-Pulchowk/">IT Club, Pulchowk</a>
+        <br />
+        <span>
+          Site designed and maintained by
+          <a href="https://github.com/aabhusanaryal">@aabhusanaryal</a></span
+        >
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -88,6 +99,12 @@ export default {
   padding: 0;
 }
 
+footer {
+  padding-top: 20px;
+  max-height: 9vh;
+  min-height: 80px;
+  color: rgba(255, 255, 255, 0.8);
+}
 #searchBox {
   width: 300px;
   height: 50px;

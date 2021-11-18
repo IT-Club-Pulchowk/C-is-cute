@@ -125,23 +125,28 @@
     <h2># Advance C Workshop</h2>
     <hr />
     <br />
-    Advanced C Workshop is sequeal to the previous season of C workshop for
-    begineers. In this season, we shall learn about more advanced concepts and
+    Advanced C Workshop is sequel to the previous session of C workshop for
+    beginners. In this session we shall learn about more advanced concepts and
     techniques that is useful for performance programming. While the workshop
-    itself uses C programming language to demonstrate it's concepts, the large
-    number of concepts that shall be shown in the workshop will be language
-    agnostic. People might have the idea of this being low level programming,
-    while we go deep into how each programming technique works in the hardware,
-    all the concepts shown are useful for both high level and low level
-    programming.<br /><br />
+    itself uses C programming language (C11) to demonstrate its concepts, the
+    large number of concepts that shall be shown in the workshop will be
+    language agnostic. People might think that this program is about low-level
+    programming. While we will go deep into how each programming technique works
+    in the hardware, all the concepts shown are useful for both high level and
+    low-level programming.<br /><br />
     <h4>## Objectives of the workshop:</h4>
     <li>
-      To teach programming concepts and techniques that are either not taught or
-      not taught properly in college and hard to learn from the internet.
+      To teach programming concepts and techniques that are either not taught at
+      all or not taught properly in college and comparatively harder to learn
+      from the internet.
+      <span v-show="false"
+        >[the teachers probably don't know and the course itself focuses on a
+        lot of theory instead of programming, so it’s rather bad]</span
+      >
     </li>
     <li>
       To encourage juniors to conduct more useful programs via the Pulchowk IT
-      Club benifiting everyone in the club and the college.
+      Club benefiting everyone in the club and the college.
     </li>
     <div class="text-center">
       <a href="#register" class="btn btn-primary" role="button">Register Now</a>
@@ -149,8 +154,7 @@
     <br />
     <h4>## Scope of the project:</h4>
     <li>Stack and Pointer Lifetime</li>
-    <li>Process Memory</li>
-    <li>Segmentation</li>
+    <li>Process Memory Segmentation</li>
     <li>Endianess</li>
     <li>Alignment, Padding and Heap Allocation</li>
     <li>Structure reordering</li>
@@ -163,107 +167,101 @@
     <li>Translation Lookaside Buffer</li>
     <li>Cache (Instruction and Data)</li>
     <li>SOA vs AOS</li>
-    <li>Multiprocessor, Threads, Thread</li>
-    <li>Pool, and Context Switching</li>
+    <li>Multiprocessor, Threads, Thread Pool, and Context Switching</li>
     <li>Allocators and Scratchpad</li>
-    <li>Volatile and</li>
-    <li>Atomic operations</li>
+    <li>Volatile and Atomic operations</li>
     <li>Memory barriers</li>
     <li>Mutex and Semaphores</li>
-    Click here to download the full scope of the workshop<br /><br />
+    <em>
+      <a
+        href="https://cdn.discordapp.com/attachments/851114438869123114/910866875985039420/C-Advanced-Syllabus.pdf"
+        >Click here</a
+      >
+      to download the full scope of the workshop.<br /><br />
+    </em>
     <h4>## Schedule:</h4>
 
     <!-- Schedule Table Start -->
+
     <table class="table">
       <thead>
         <tr>
-          <th class="text-center">Day</th>
-          <th class="text-center">Work</th>
-          <th class="text-center">Time Required</th>
-          <th class="text-center">Date/Time</th>
+          <th class="text-center">Lecture</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Lecturer</th>
+          <th class="text-center">Date</th>
         </tr>
       </thead>
+
       <tbody>
-        <!-- Day 0 -->
         <tr>
           <th class="text-center">0</th>
-          <td class="text-center">Lecture 1</td>
-          <td class="text-center">2</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">
+            Alignment, Padding and Heap Allocation
+          </td>
+          <td class="text-center lecturer-cell">Pramish Aryal & Sulav Deo</td>
+          <td class="text-center">2078-8-10</td>
         </tr>
-        <!-- Day 1 -->
         <tr>
           <th class="text-center">1</th>
-          <td class="text-center">Assignment 1</td>
-          <td class="text-center">0</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">Data Structures and Algorithms</td>
+          <td class="text-center lecturer-cell">
+            Srijan Poudel & Rujal Acharya
+          </td>
+          <td class="text-center">2078-8-13</td>
         </tr>
-        <!-- Day 2 -->
         <tr>
           <th class="text-center">2</th>
-          <td class="text-center">Assignment 1 Review + Publish</td>
-          <td class="text-center">2-4</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">
+            Overview of Computer Architecture
+          </td>
+          <td class="text-center lecturer-cell">
+            Samip Poudel & Pranjal Pokharel
+          </td>
+          <td class="text-center">2078-8-18</td>
         </tr>
-        <!-- Day 3 -->
         <tr>
           <th class="text-center">3</th>
-          <td class="text-center">Lecture 2</td>
-          <td class="text-center">1-2</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">
+            Virtual Page Allocation, Allocators and Scratchpad
+          </td>
+          <td class="text-center lecturer-cell">
+            Asim Maharjan & Madhav Aryal
+          </td>
+          <td class="text-center">2078-8-19</td>
         </tr>
-        <!-- Day 4 -->
         <tr>
           <th class="text-center">4</th>
-          <td class="text-center">Assignment 2</td>
-          <td class="text-center">0</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">Multithreading I</td>
+          <td class="text-center lecturer-cell">
+            Tilak Chad & Ashish Bhattrai
+          </td>
+          <td class="text-center">2078-8-22</td>
         </tr>
-        <!-- Day 5 -->
         <tr>
           <th class="text-center">5</th>
-          <td class="text-center">Assignment 2</td>
-          <td class="text-center">0</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">Multithreading II</td>
+          <td class="text-center lecturer-cell">
+            Bibek Panthi & Safal Thapaliya
+          </td>
+          <td class="text-center">2078-8-25</td>
         </tr>
-        <!-- Day 6 -->
         <tr>
           <th class="text-center">6</th>
-          <td class="text-center">Assignment 2 Review + Publish</td>
-          <td class="text-center">2-4</td>
-          <td class="text-center">TBD</td>
-        </tr>
-        <!-- Day 7 -->
-        <tr>
-          <th class="text-center">7</th>
-          <td class="text-center">Lecture 3</td>
-          <td class="text-center">3-4</td>
-          <td class="text-center">TBD</td>
-        </tr>
-        <!-- Day 8 -->
-        <tr>
-          <th class="text-center">8</th>
-          <td class="text-center">Lecture 4</td>
-          <td class="text-center">3</td>
-          <td class="text-center">TBD</td>
-        </tr>
-        <!-- Day 9 -->
-        <tr>
-          <th class="text-center">9</th>
-          <td class="text-center">Assignment 4</td>
-          <td class="text-center">0</td>
-          <td class="text-center">TBD</td>
-        </tr>
-        <!-- Day 10-->
-        <tr>
-          <th class="text-center">10</th>
-          <td class="text-center">Assignment 4 Review + Publish</td>
-          <td class="text-center">2-4</td>
-          <td class="text-center">TBD</td>
+          <td class="text-center name-cell">Neat C Techniques</td>
+          <td class="text-center lecturer-cell">
+            Aayush Acharya & Kanchan Poudel
+          </td>
+          <td class="text-center">2078-8-28</td>
         </tr>
       </tbody>
     </table>
     <!-- Schedule Table End -->
+
+    <!-- Contact -->
+    <h4>## Contact</h4>
+    If you have any questions regarding the workshop, feel free to reach out to
+    us on our <a href="https://discord.gg/dvV6RrjjmS">Discord server.</a>
   </div>
 </template>
 <script>
@@ -287,5 +285,11 @@ export default {};
   padding: 0 20px 0 30px;
   margin-bottom: 30px;
   font-size: 18px;
+}
+.lecturer-cell {
+  max-width: 200px;
+}
+.name-cell {
+  max-width: 300px;
 }
 </style>
