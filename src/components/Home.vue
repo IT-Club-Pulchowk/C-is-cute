@@ -66,6 +66,28 @@
                 >I've worked with C before</label
               >
             </div>
+            <div class="custom-radio">
+              <input
+                type="radio"
+                name="familarity-with-c"
+                id="i-have-made-a-project-with-c"
+                value="2"
+                required="required"
+              />
+              <label for="i-have-made-a-project-with-c"
+                >I've made some projects with C</label
+              >
+            </div>
+            <div class="custom-radio">
+              <input
+                type="radio"
+                name="familarity-with-c"
+                id="i-am-dennis-ritchie"
+                value="3"
+                required="required"
+              />
+              <label for="i-am-dennis-ritchie">I'm Dennis Ritchie!</label>
+            </div>
           </div>
           <!-- Familarity with C Input End -->
 
@@ -150,13 +172,98 @@
     <li>Mutex and Semaphores</li>
     Click here to download the full scope of the workshop<br /><br />
     <h4>## Schedule:</h4>
-    The time mentioned are exact, thus so as to not delay the start of the
-    program, all the participants are expected to arrive at the workshop at
-    least 5 minutes earlier. The details and results of the assignment will be
-    posted during the workshop day [links to assignments page] You can ask
-    further questions and queries about the workshop and during the workshop in
-    our official discord server [links below button] [Registration form button]
-    [Discord server link]
+
+    <!-- Schedule Table Start -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Day</th>
+          <th class="text-center">Work</th>
+          <th class="text-center">Time Required</th>
+          <th class="text-center">Date/Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Day 0 -->
+        <tr>
+          <th class="text-center">0</th>
+          <td class="text-center">Lecture 1</td>
+          <td class="text-center">2</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 1 -->
+        <tr>
+          <th class="text-center">1</th>
+          <td class="text-center">Assignment 1</td>
+          <td class="text-center">0</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 2 -->
+        <tr>
+          <th class="text-center">2</th>
+          <td class="text-center">Assignment 1 Review + Publish</td>
+          <td class="text-center">2-4</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 3 -->
+        <tr>
+          <th class="text-center">3</th>
+          <td class="text-center">Lecture 2</td>
+          <td class="text-center">1-2</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 4 -->
+        <tr>
+          <th class="text-center">4</th>
+          <td class="text-center">Assignment 2</td>
+          <td class="text-center">0</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 5 -->
+        <tr>
+          <th class="text-center">5</th>
+          <td class="text-center">Assignment 2</td>
+          <td class="text-center">0</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 6 -->
+        <tr>
+          <th class="text-center">6</th>
+          <td class="text-center">Assignment 2 Review + Publish</td>
+          <td class="text-center">2-4</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 7 -->
+        <tr>
+          <th class="text-center">7</th>
+          <td class="text-center">Lecture 3</td>
+          <td class="text-center">3-4</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 8 -->
+        <tr>
+          <th class="text-center">8</th>
+          <td class="text-center">Lecture 4</td>
+          <td class="text-center">3</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 9 -->
+        <tr>
+          <th class="text-center">9</th>
+          <td class="text-center">Assignment 4</td>
+          <td class="text-center">0</td>
+          <td class="text-center">TBD</td>
+        </tr>
+        <!-- Day 10-->
+        <tr>
+          <th class="text-center">10</th>
+          <td class="text-center">Assignment 4 Review + Publish</td>
+          <td class="text-center">2-4</td>
+          <td class="text-center">TBD</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Schedule Table End -->
   </div>
 </template>
 <script>
@@ -179,5 +286,6 @@ export default {};
 .container {
   padding: 0 20px 0 30px;
   margin-bottom: 30px;
+  font-size: 18px;
 }
 </style>
