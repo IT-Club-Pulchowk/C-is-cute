@@ -5,7 +5,7 @@
 
       <nav class="navbar">
         <router-link to="/" class="navbar-brand ml-10 ml-sm-15">
-          Advance C Workshop
+          Advanced C Workshop
         </router-link>
         <ul class="navbar-nav hidden-sm-and-down">
           <li

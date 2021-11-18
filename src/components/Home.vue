@@ -129,7 +129,7 @@
   </div>
 
   <div class="container">
-    <h2># Advance C Workshop</h2>
+    <h2># Advanced C Workshop</h2>
     <hr />
     <br />
     Advanced C Workshop is a sequel to the previous session of C workshop
@@ -156,7 +156,13 @@
       their projects which are not only refined but also efficient.
     </li>
     <div class="text-center">
-      <a href="#register" class="btn btn-primary" role="button">Register Now</a>
+      <a
+        href="#register"
+        class="btn btn-primary"
+        role="button"
+        style="font-family:'Lucida Console', monospace;"
+        >Register Now</a
+      >
     </div>
     <br />
     <h4>## Scope of the project:</h4>
@@ -293,7 +299,7 @@ export default {
           console.log(this.formSubmission);
         }
       },
-      successTemplate: `<div class="alert alert-success" role="alert">Thank you for registering!</div>`,
+      successTemplate: `<div class="alert alert-success" role="alert" style="opacity: 1">Thank you for registering!</div>`,
     });
   },
 };
@@ -322,5 +328,11 @@ export default {
 }
 .name-cell {
   max-width: 300px;
+}
+</style>
+<style>
+.pageclip-form__success {
+  background-color: var(--dm-modal-content-bg-color);
+  opacity: 0.9;
 }
 </style>
