@@ -4,9 +4,9 @@
       <!-- Navbar (immediate child of the page wrapper) -->
 
       <nav class="navbar">
-        <a href="/" class="navbar-brand ml-10 ml-sm-15">
+        <router-link to="/" class="navbar-brand ml-10 ml-sm-15">
           IT CLUB
-        </a>
+        </router-link>
         <ul class="navbar-nav hidden-sm-and-down">
           <li
             class="nav-item"

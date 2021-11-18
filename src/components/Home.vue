@@ -1,17 +1,19 @@
 <template>
-  <!-- First comes the modal -->
-  <div class="modal" id="modal-2" tabindex="-1" role="dialog">
+  <!-- Registration form modal -->
+  <div class="modal" id="register" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <a href="#" class="btn close" role="button" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </a>
         <h5 class="modal-title">Register for the workshop</h5>
+        <!-- Form element start -->
         <form
           action="https://send.pageclip.co/8FK0jzAfhqmOC9uuqHwR8zrAkCp21KEW/adv-c"
           method="post"
           class="pageclip-form"
         >
+          <!-- Full Name Input Start -->
           <div class="form-group">
             <label for="name" class="required">Full Name</label>
             <input
@@ -22,6 +24,9 @@
               required="required"
             />
           </div>
+          <!-- Full Name Input End -->
+
+          <!-- Email Input Start -->
           <div class="form-group">
             <label for="email" class="required">Campus Email</label>
             <input
@@ -32,32 +37,61 @@
               required="required"
             />
           </div>
+          <!-- Email Input End -->
+
+          <!-- Familarity with C Input Start -->
           <div class="form-group">
-            <select
-              class="form-control"
-              id="attended-beginner"
-              required="required"
-            >
-              <option value="" selected="selected" disabled="disabled"
-                >Did you attend the beginner's workshop?</option
+            <label class="required">Rate your familarity with C</label>
+            <div class="custom-radio">
+              <input
+                type="radio"
+                name="gender"
+                id="who-is-c"
+                value="0"
+                required="required"
+              />
+              <label for="who-is-c">Who is C?</label>
+            </div>
+            <div class="custom-radio">
+              <input
+                type="radio"
+                name="gender"
+                id="i-have-worked-with-c"
+                value="1"
+                required="required"
+              />
+              <label for="i-have-worked-with-c"
+                >I've worked with C before</label
               >
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
+            </div>
           </div>
+          <!-- Familarity with C Input End -->
+
+          <!-- Beginner Workshop Input Start -->
+          <div class="form-group">
+            <div class="custom-checkbox">
+              <input type="checkbox" id="attended-beginner-workshop" />
+              <label for="attended-beginner-workshop"
+                >I've attended the beginner's workshop on C by IT Club (not
+                required)
+              </label>
+            </div>
+          </div>
+          <!-- Beginner Workshop Input End -->
+
+          <!-- Submit Button Start -->
           <button
             type="submit"
             class="pageclip-form__submit btn btn-primary btn-block"
           >
             <span>Send</span>
           </button>
+          <!-- Submit Button End -->
         </form>
+        <!-- Form End -->
       </div>
     </div>
   </div>
-
-  <!-- Page wrapper -->
-  <div class="page-wrapper"></div>
 
   <div class="container">
     <h2># Advance C Workshop</h2>
@@ -81,6 +115,9 @@
       To encourage juniors to conduct more useful programs via the Pulchowk IT
       Club benifiting everyone in the club and the college.
     </li>
+    <div class="text-center">
+      <a href="#register" class="btn btn-primary" role="button">Register Now</a>
+    </div>
     <br />
     <h4>## Scope of the project:</h4>
     <li>Stack and Pointer Lifetime</li>
@@ -114,7 +151,6 @@
     further questions and queries about the workshop and during the workshop in
     our official discord server [links below button] [Registration form button]
     [Discord server link]
-    <a href="#modal-2" class="btn btn-primary" role="button">Register Now</a>
   </div>
 </template>
 <script>
