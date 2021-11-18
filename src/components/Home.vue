@@ -19,6 +19,7 @@
             <input
               type="text"
               id="name"
+              name="name"
               class="form-control"
               placeholder="Ben Dover"
               required="required"
@@ -32,6 +33,7 @@
             <input
               type="email"
               id="email"
+              name="email"
               class="form-control"
               placeholder="069BCT036.ben@pcampus.edu.np"
               required="required"
@@ -45,7 +47,7 @@
             <div class="custom-radio">
               <input
                 type="radio"
-                name="gender"
+                name="familarity-with-c"
                 id="who-is-c"
                 value="0"
                 required="required"
@@ -55,7 +57,7 @@
             <div class="custom-radio">
               <input
                 type="radio"
-                name="gender"
+                name="familarity-with-c"
                 id="i-have-worked-with-c"
                 value="1"
                 required="required"
@@ -70,7 +72,11 @@
           <!-- Beginner Workshop Input Start -->
           <div class="form-group">
             <div class="custom-checkbox">
-              <input type="checkbox" id="attended-beginner-workshop" />
+              <input
+                type="checkbox"
+                id="attended-beginner-workshop"
+                name="attended-beginner"
+              />
               <label for="attended-beginner-workshop"
                 >I've attended the beginner's workshop on C by IT Club (not
                 required)
