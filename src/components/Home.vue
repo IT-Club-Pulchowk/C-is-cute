@@ -269,6 +269,7 @@
         </tr>
       </tbody>
     </table>
+    Venue: Pulchowk Campus<br />Time: 7:30 am
     <!-- Schedule Table End -->
 
     <!-- Contact -->

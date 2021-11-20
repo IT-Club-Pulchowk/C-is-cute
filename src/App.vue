@@ -31,29 +31,30 @@
       </div>
     </div>
   </div>
+  <div class="page-wrapper">
+    <TheHeader :systemTheme="systemTheme" />
+    <div class="content-wrapper">
+      <br />
+      <br />
+      <br />
 
-  <TheHeader :systemTheme="systemTheme" />
-  <div class="content-wrapper">
-    <br />
-    <br />
-    <br />
-
-    <router-view
-      :queryName="queryName"
-      ref="statsAll"
-      :systemTheme="systemTheme"
-    />
-    <footer class="bg-very-dark font-size-12">
-      <div class="text-center">
-        Event organised by
-        <a href="https://github.com/IT-Club-Pulchowk/">IT Club, Pulchowk</a>
-        <br />
-        <span>
-          Site designed and maintained by
-          <a href="https://github.com/aabhusanaryal">@aabhusanaryal</a></span
-        >
-      </div>
-    </footer>
+      <router-view
+        :queryName="queryName"
+        ref="statsAll"
+        :systemTheme="systemTheme"
+      />
+      <footer class="bg-very-dark font-size-12 ">
+        <div class="text-center">
+          Event organised by
+          <a href="https://github.com/IT-Club-Pulchowk/">IT Club, Pulchowk</a>
+          <br />
+          <span>
+            Site designed and maintained by
+            <a href="https://github.com/aabhusanaryal">@aabhusanaryal</a></span
+          >
+        </div>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -104,6 +105,9 @@ footer {
   max-height: 10vh;
   min-height: 90px;
   color: rgba(255, 255, 255, 0.8);
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
 }
 #searchBox {
   width: 300px;
