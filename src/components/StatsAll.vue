@@ -170,6 +170,11 @@ export default {
 </script>
 
 <style>
+thead {
+  position: fixed;
+  top: 0;
+}
+
 #searchBox {
   width: 300px;
   height: 50px;
