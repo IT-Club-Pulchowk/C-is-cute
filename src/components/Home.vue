@@ -139,8 +139,8 @@
     intent is to be a presentation of topics that are language agnostic. While
     the workshop looks seemingly geared towards low level programming, the
     concepts presented here carry over and be significant in high level
-    programming as well.
-    <br /><br />
+    programming as well. <br /><br />
+    <strong>Venue: Pulchowk Campus<br />Time: 7:30 am</strong> <br /><br />
     <h4>## Objectives of the workshop:</h4>
     <li>
       To teach programming concepts and techniques that are either glossed over
@@ -269,7 +269,6 @@
         </tr>
       </tbody>
     </table>
-    Venue: Pulchowk Campus<br />Time: 7:30 am
     <!-- Schedule Table End -->
 
     <!-- Contact -->
@@ -329,6 +328,9 @@ export default {
 }
 .name-cell {
   max-width: 300px;
+}
+strong {
+  font-size: 1.4rem;
 }
 </style>
 <style>
