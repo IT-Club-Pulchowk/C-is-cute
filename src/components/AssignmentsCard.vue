@@ -7,32 +7,20 @@
       <img src="" class="img-fluid rounded-top" alt="" />
       <!-- rounded-top = rounded corners on the top -->
       <!-- First content container nested inside card -->
-      <div class="content">
-        <h2 class="content-title">
-          {{ assignment.id }}. {{ assignment.title }}
-        </h2>
+      <!-- Heading section below -->
+      <!-- <div class="content">
+        <h2 class="content-title">Assignment {{ assignment.id }}</h2>
         <div>
           <span class="text-muted">
             <i class="fa fa-clock-o mr-5" aria-hidden="true"></i
             >{{ assignment.timestamp }}
-            <!-- mr-5 = margin-right: 0.5rem (5px) -->
           </span>
         </div>
       </div>
-      <hr />
+      <hr /> -->
       <!-- Second content container nested inside card (comments) -->
       <div class="content">
-        <h2 class="content-title">
-          Description
-        </h2>
         <div v-html="assignmentDescription"></div>
-        <div v-highlight>
-          <pre class="language-clike">
-                <code>
-printf("Hello World")
-                </code>
-            </pre>
-        </div>
         <div class="text-center mt-20">
           <!-- text-center = text-align: center, mt-20 = margin-top: 2rem (20px) -->
           <a class="btn btn-sm" :href="assignment.link" target="_blank">
@@ -66,13 +54,8 @@ export default {
   },
   computed: {
     assignmentDescription() {
-      return marked.parse(this.assignment);
+      return marked.parse(this.assignment.text);
     },
-  },
-  mounted() {
-    document
-      .querySelectorAll("code")
-      .forEach((block) => (block.innerHTML += "hello"));
   },
 };
 </script>

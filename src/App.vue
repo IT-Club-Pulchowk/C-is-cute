@@ -127,38 +127,6 @@
       </div>
     </div>
   </div>
-  <div
-    class="modal modal-full ie-scroll-fix"
-    id="modal-1"
-    tabindex="-1"
-    role="dialog"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <a href="#" class="close" role="button" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </a>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 offset-md-2">
-              <div v-highlight>
-                <pre class="language-javascript">
-                    <code>
-                    console.log(hello);
-                    console.log(hello);
-                    console.log(hello);
-                    console.log(hello);
-                    console.log(hello);
-                    console.log(hello);
-                    </code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="page-wrapper">
     <TheHeader :systemTheme="systemTheme" />
     <div class="content-wrapper">

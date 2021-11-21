@@ -18,18 +18,23 @@ export default {
   },
   data() {
     return {
-      data_url: "https://aabhusanaryal.github.io/fake-json/assignments.json",
-      data_url_temp:
-        "https://aabhusanaryal.github.io/fake-json/assignments/1.md",
-      data: {},
+      data_url: "https://aabhusanaryal.github.io/fake-json/assignments",
+      data: [],
     };
   },
   mounted() {
-    fetch(this.data_url_temp)
-      .then((res) => res.text())
-      .then((res) => {
-        this.data[0] = res;
+    for (let i = 1; i < 10; i++) {
+      fetch(`${this.data_url}/${i}.md`).then((res) => {
+        if (res.ok) {
+          res.text().then((res) =>
+            this.data.push({
+              id: i,
+              text: res,
+            })
+          );
+        } else this.data.sort((f, s) => s.id - f.id); // Sort the array once you encounter a 404
       });
+    }
   },
 };
 </script>
