@@ -19,22 +19,29 @@ export default {
   data() {
     return {
       data_url: "https://aabhusanaryal.github.io/fake-json/assignments",
-      data: [],
+      temp_data: [],
     };
   },
   mounted() {
     for (let i = 1; i < 10; i++) {
       fetch(`${this.data_url}/${i}.md`).then((res) => {
         if (res.ok) {
+          console.log(res);
           res.text().then((res) =>
-            this.data.push({
+            this.temp_data.push({
               id: i,
               text: res,
             })
           );
-        } else this.data.sort((f, s) => s.id - f.id); // Sort the array once you encounter a 404
+        }
       });
     }
+  },
+  computed: {
+    data: function() {
+      let temp_array = [...this.temp_data];
+      return temp_array.sort((a, b) => b.id - a.id);
+    },
   },
 };
 </script>

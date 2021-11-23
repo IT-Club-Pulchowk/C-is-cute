@@ -175,6 +175,9 @@ thead {
   top: 0;
 }
 
+.container-fluid {
+  min-height: 81vh;
+}
 #searchBox {
   width: 300px;
   height: 50px;

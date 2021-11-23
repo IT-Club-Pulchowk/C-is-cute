@@ -198,12 +198,8 @@ export default {
 
 footer {
   padding-top: 20px;
-  max-height: 10vh;
-  min-height: 90px;
+  height: 10vh;
   color: rgba(255, 255, 255, 0.8);
-  /* position: absolute;
-  bottom: 0;
-  width: 100%; */
 }
 #searchBox {
   width: 300px;
