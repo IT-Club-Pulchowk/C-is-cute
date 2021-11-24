@@ -11,7 +11,11 @@
     the workshop looks seemingly geared towards low level programming, the
     concepts presented here carry over and be significant in high level
     programming as well. <br /><br />
-    <strong>Venue: Pulchowk Campus<br />Time: 7:30 am</strong> <br /><br />
+    <strong
+      >Venue: Pulchowk Campus<br />Time: 7:30 am (Exception: 10:15 am on
+      Saturday)</strong
+    >
+    <br /><br />
     <h4>## Objectives of the workshop:</h4>
     <li>
       To teach programming concepts and techniques that are either glossed over
