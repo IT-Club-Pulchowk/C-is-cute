@@ -27,10 +27,13 @@
           <th scope="col">
             Name <i @click="sortByName" class="fa fa-fw fa-sort"></i>
           </th>
-          <th scope="col">Compilation</th>
-          <th scope="col">Execution</th>
-          <th scope="col">Output</th>
-          <th scope="col">Correctness</th>
+          <th scope="col">Compiled</th>
+          <th scope="col">Launched</th>
+          <th scope="col">Milliseconds</th>
+          <th scope="col">Cycles</th>
+          <th scope="col">Pagefaults</th>
+          <th scope="col">Page mapped issues</th>
+          <th scope="col">Page file issues</th>
           <th scope="col">
             Runtime <i @click="sortByTime" class="fa fa-fw fa-sort"></i>
           </th>
@@ -39,15 +42,33 @@
       <tbody>
         <tr v-for="person in sorted_out" :key="person.roll">
           <th scope="row" v-if="person.roll != undefined">{{ person.roll }}</th>
-          <td>{{ person.name }}</td>
-          <td>{{ person.Compilation == "true" ? "✔️" : "❌" }}</td>
-          <td>{{ person.Execution == "true" ? "✔️" : "❌" }}</td>
-          <td>{{ person.Output == "true" ? "✔️" : "❌" }}</td>
-          <td>{{ person.Correctness == "true" ? "✔️" : "❌" }}</td>
-          <td>{{ person["Compilation Time"] }}</td>
+          <td class="text-center">{{ person.name }}</td>
+          <td class="text-center">
+            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Execution == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Output == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">
+            {{ person.Correctness == "true" ? "✔️" : "❌" }}
+          </td>
+          <td class="text-center">{{ person["Compilation Time"] }}</td>
         </tr>
       </tbody>
     </table>
+    <br />
   </div>
 </template>
 
@@ -204,12 +225,12 @@ i {
 }
 @media (min-width: 992px) {
   .container-fluid {
-    width: 970px;
+    width: 800px;
   }
 }
 @media (min-width: 1200px) {
   .container-fluid {
-    width: 1170px;
+    width: 1500px;
   }
 }
 </style>
