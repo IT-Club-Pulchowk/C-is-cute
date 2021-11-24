@@ -29,10 +29,11 @@
     <div class="text-center">
       <a
         href="#register"
-        class="btn btn-primary register-button"
+        class="btn btn-primary register-button disabled"
         role="button"
         style="font-family:'Lucida Console', monospace;"
-        >Register Now</a
+        disabled="disabled"
+        >Registrations Closed</a
       >
     </div>
     <br />
