@@ -23,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
       fetch(`${this.data_url}/${i}.md`).then((res) => {
         if (res.ok) {
           console.log(res);

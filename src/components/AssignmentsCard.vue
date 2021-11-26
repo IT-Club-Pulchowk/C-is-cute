@@ -23,7 +23,7 @@
         <div v-html="assignmentDescription"></div>
         <div class="text-center mt-20">
           <!-- text-center = text-align: center, mt-20 = margin-top: 2rem (20px) -->
-          <a class="btn btn-sm" :href="assignment.link" target="_blank">
+          <a class="btn btn-sm" :href="submitLink" target="_blank">
             Submit Assignment {{ assignment.id }}
           </a>
         </div>
@@ -55,6 +55,9 @@ export default {
   computed: {
     assignmentDescription() {
       return marked.parse(this.assignment.text);
+    },
+    submitLink() {
+      return `https://github.com/IT-Club-Pulchowk/Advance-C-Workshop/tree/main/Day${this.assignment.id}`;
     },
   },
 };

@@ -29,14 +29,27 @@
           </th>
           <th scope="col">Compiled</th>
           <th scope="col">Launched</th>
-          <th scope="col">Milliseconds</th>
-          <th scope="col">Cycles</th>
-          <th scope="col">Pagefaults</th>
-          <th scope="col">Page mapped issues</th>
-          <th scope="col">Page file issues</th>
           <th scope="col">
-            Runtime <i @click="sortByTime" class="fa fa-fw fa-sort"></i>
+            Milliseconds
+            <i @click="sortByMilliseconds" class="fa fa-fw fa-sort"></i>
           </th>
+          <th scope="col">
+            Cycles <i @click="sortByCycles" class="fa fa-fw fa-sort"></i>
+          </th>
+          <th scope="col">
+            Pagefaults
+            <i @click="sortByPagefaults" class="fa fa-fw fa-sort"></i>
+          </th>
+          <th scope="col">
+            Page mapped issues
+            <i @click="sortByPMI" class="fa fa-fw fa-sort"></i>
+          </th>
+          <th scope="col">
+            Page file issues <i @click="sortByPFI" class="fa fa-fw fa-sort"></i>
+          </th>
+          <!-- <th scope="col">
+            Runtime <i @click="sortByTime" class="fa fa-fw fa-sort"></i>
+          </th> -->
         </tr>
       </thead>
       <tbody>
@@ -44,27 +57,27 @@
           <th scope="row" v-if="person.roll != undefined">{{ person.roll }}</th>
           <td class="text-center">{{ person.name }}</td>
           <td class="text-center">
-            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+            {{ person.compiled == "true" ? "✔️" : "❌" }}
           </td>
           <td class="text-center">
-            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+            {{ person.launched == "true" ? "✔️" : "❌" }}
           </td>
           <td class="text-center">
-            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+            {{ person.milliseconds }}
           </td>
           <td class="text-center">
-            {{ person.Compilation == "true" ? "✔️" : "❌" }}
+            {{ person.cycles }}
           </td>
           <td class="text-center">
-            {{ person.Execution == "true" ? "✔️" : "❌" }}
+            {{ person.pagefaults }}
           </td>
           <td class="text-center">
-            {{ person.Output == "true" ? "✔️" : "❌" }}
+            {{ person.page_maps_issues }}
           </td>
           <td class="text-center">
-            {{ person.Correctness == "true" ? "✔️" : "❌" }}
+            {{ person.page_file_issues }}
           </td>
-          <td class="text-center">{{ person["Compilation Time"] }}</td>
+          <!-- <td class="text-center">{{ person["Compilation Time"] }}</td> -->
         </tr>
       </tbody>
     </table>
@@ -134,6 +147,61 @@ export default {
       });
       this.sortOrder = !this.sortOrder;
     },
+    sortByMilliseconds() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.milliseconds - el2.milliseconds;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByCycles() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.cycles - el2.cycles;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByPagefaults() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.pagefaults - el2.pagefaults;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByPMI() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.page_maps_issues - el2.page_maps_issues;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
+    sortByPFT() {
+      this.sorted_out.sort((el1, el2) => {
+        let d = el1.page_file_issues - el2.page_file_issues;
+        if (this.sortOrder) {
+          return d;
+        } else {
+          return -d;
+        }
+      });
+      this.sortOrder = !this.sortOrder;
+    },
     fetchData() {
       // Fetching CSV and converting to JSON
       fetch(this.data_url)
@@ -164,7 +232,6 @@ export default {
   mounted() {
     if (this.$route.params.day != undefined) {
       this.day = this.$route.params.day;
-      console.log(this.day);
       this.data_url = `${this.data_url_base}_DAY${this.day}.csv`;
       this.fetchData();
     } else {
@@ -223,14 +290,14 @@ i {
     width: 550px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1020px) {
   .container-fluid {
     width: 800px;
   }
 }
 @media (min-width: 1200px) {
   .container-fluid {
-    width: 1500px;
+    width: 1200px;
   }
 }
 </style>

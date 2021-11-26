@@ -29,7 +29,7 @@
               id="nav-link-dropdown-toggle"
             >
               Results
-              <i class="fa fa-angle-down ml-5" aria-hidden="true"></i>
+              <i class="fa fa-angle-down ml-5" aria-hidden="false"></i>
               <!-- ml-5= margin-left: 0.5rem (5px) -->
             </a>
             <div
@@ -58,7 +58,7 @@
             </div>
           </li>
           <!-- Remove v-show="false" to show Assignments link in navbar -->
-          <router-link class="nav-link" to="/assignments" v-show="false">
+          <router-link class="nav-link" to="/assignments" v-show="true">
             Assignments</router-link
           >
           <button
