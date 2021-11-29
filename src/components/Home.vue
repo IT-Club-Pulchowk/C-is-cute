@@ -107,7 +107,7 @@
           <td class="text-center lecturer-cell">
             Samip Poudel & Pranjal Pokharel
           </td>
-          <td class="text-center">2078-8-18</td>
+          <td class="text-center">2078-8-17</td>
         </tr>
         <tr>
           <th class="text-center">3</th>
