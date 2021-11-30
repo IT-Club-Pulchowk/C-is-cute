@@ -44,6 +44,14 @@ ${code}
             </pre>
         </div>`;
   },
+  table(header, body) {
+    return `
+    <table class="table">
+      <thead>${header}</thead>
+      <body>${body}</body>
+    </table>
+    `;
+  },
 };
 
 marked.use({ renderer });
