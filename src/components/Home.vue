@@ -133,7 +133,7 @@
           <td class="text-center lecturer-cell">
             Bibek Panthi & Safal Thapaliya
           </td>
-          <td class="text-center">2078-8-25</td>
+          <td class="text-center">2078-8-26</td>
         </tr>
         <tr>
           <th class="text-center">6</th>
@@ -141,7 +141,7 @@
           <td class="text-center lecturer-cell">
             Aayush Acharya & Kanchan Poudel
           </td>
-          <td class="text-center">2078-8-28</td>
+          <td class="text-center">2078-8-29</td>
         </tr>
       </tbody>
     </table>
